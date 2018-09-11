@@ -13,15 +13,20 @@ public class Main {
         byte[] bytes = Files.readAllBytes(path);
         String fileContents =  new String(bytes);
 
-        Pattern p = Pattern.compile("[A-Za-z0-9_]*\\.?[A-Za-z0-9_]*@[A-Za-z0-9_]*.[A-Za-z0-9_]*\\.?[A-Za-z0-9_]*");
+        Pattern p = Pattern.compile("\\w*?\\d*?[-._]*?@my-email.net");
         Matcher m = p.matcher(fileContents);
 
         int count = 0;
         while(m.find()) {
             count++;
+
+
+
         }
         System.out.println(count);
+//            System.out.println("@outlook.com =" + count);
     }
+
 }
 
 
