@@ -16,9 +16,9 @@ public class Main {
         Pattern p = Pattern.compile("[A-Za-z0-9]*.\\.?[A-Za-z0-9]*@[A-Za-z0-9]*.[A-Za-z0-9]*\\.?[A-Za-z0-9]*");
         Matcher m = p.matcher(fileContents);
 
-        int count= 0;
+        int count = 0;
         while(m.find()) {
-            count = count++;
+            count++;
         }
         System.out.println(count);
     }
