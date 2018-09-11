@@ -13,7 +13,7 @@ public class Main {
         byte[] bytes = Files.readAllBytes(path);
         String fileContents =  new String(bytes);
 
-        Pattern p = Pattern.compile("[A-Za-z0-9_]*\\.?[A-Za-z0-9_]*@[A-Za-z0-9_]*.[A-Za-z0-9_]*\\.?[A-Za-z0-9_]*");
+        Pattern p = Pattern.compile("[A-Za-z0-9_]*\\.?[A-Za-z0-9_]*@softwire.com\\s");
         Matcher m = p.matcher(fileContents);
 
         int count = 0;
@@ -23,8 +23,8 @@ public class Main {
 
 
         }
-//        System.out.println(count);
-            System.out.println("Total email addresses found = " + count);
+        System.out.println(count);
+//            System.out.println("Total email addresses found = " + count);
     }
 
 }
