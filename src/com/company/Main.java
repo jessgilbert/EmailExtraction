@@ -8,32 +8,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-
-    private static CharSequence inputText;
-
-    public static void main(String[] args) {
-	// write your code here
-        Path path = Paths.get("C:\\Users\\JJG\\Work\\Training\\EmailExtraction\\sample.txt");
-        fileOpen(path);
-        {
-
-            Pattern pattern = Pattern.compile("\\w*@softwire.com\\s");
-            Matcher matcher = pattern.matcher("\\w*@softwire.com\\s");
-
-
+    public static void main(String[] args) throws IOException {
+        Path path = Paths.get("C:\\Users\\JJG\\Work\\Training\\EmailExtraction\\sample.txt" );
+        byte[] bytes = Files.readAllBytes(path);
+        String fileContents =  new String(bytes);
+        Pattern p = Pattern.compile("\\w*?\\.?\\w*@\\w*\\.\\w*\\.?\\w*");
+        Matcher m = p.matcher(fileContents);
+        int count= 0;
+        while(m.find() == true) {
+            count = count++;
         }
-
+        System.out.println(count);
     }
 
-    public static String fileOpen(Path fileLocation)
-    {
-        byte[] bytes = new byte[0];
-        try {
-            bytes = Files.readAllBytes(fileLocation);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new String(bytes);
-    }
 
-}
+
+
