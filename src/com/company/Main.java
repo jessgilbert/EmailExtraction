@@ -13,7 +13,7 @@ public class Main {
         byte[] bytes = Files.readAllBytes(path);
         String fileContents =  new String(bytes);
 
-        Pattern p = Pattern.compile("[A-Za-z0-9]*.\\.?[A-Za-z0-9]*@[A-Za-z0-9]*.[A-Za-z0-9]*\\.?[A-Za-z0-9]*");
+        Pattern p = Pattern.compile("[A-Za-z0-9_]*\\.?[A-Za-z0-9_]*@[A-Za-z0-9_]*.[A-Za-z0-9_]*\\.?[A-Za-z0-9_]*");
         Matcher m = p.matcher(fileContents);
 
         int count = 0;
